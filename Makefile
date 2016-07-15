@@ -19,7 +19,7 @@ list:
 install: backup
 	for file in $(DOTFILES); do ln $(LN_FLAGS) $(CURDIR)/$$file ~/.`basename $$file`; done
 
-# Allow this to run once. Do not overwrite previous .bkups
+# Allow this to run once. Do not overwrite previous .bkup
 backup:
 	for file in $(DOTFILES); do mv -v ~/.`basename $$file` ~/.`basename $$file`.bkup 2>/dev/null; true; done
 
